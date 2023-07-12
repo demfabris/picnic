@@ -1,0 +1,12 @@
+{
+    "foo": "bar",
+    "baz": {
+      "quz": "qork"
+    },
+    "boo": [
+      "bah",
+      {
+        "lol": "lurg"
+      }
+    ]
+}
