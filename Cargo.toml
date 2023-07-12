@@ -1,14 +1,18 @@
 [package]
-name = "picnic"
+name = "picnic-rs"
 version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 categories = ["command-line-utilities, filesystem"]
-keywords = ["bin", "cli", "json", "env", "yaml", "yml", "toml"]
+keywords = ["cli", "json", "env", "yaml", "toml"]
 authors = ["Fabricio <demfabris@gmail.com>"]
 description = "PICNIC Is Config Notation Interpreter/Converter"
 repository = "https://github.com/demfabris/picnic.git"
 readme = "README.md"
+
+[[bin]]
+name = "picnic"
+path = "src/main.rs"
 
 [dependencies]
 serde_json = "1"
@@ -20,3 +24,9 @@ regex = "1"
 assert_cmd = "2"
 assert_fs = "1"
 predicates = "3"
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 2
+strip = "symbols"
